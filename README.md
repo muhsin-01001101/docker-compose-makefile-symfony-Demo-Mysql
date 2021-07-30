@@ -1,37 +1,31 @@
-Docker-compose Makefile and Symfony Demo Application
+Symfony Demo Application
 ========================
+This Project LICENSED to https://github.com/muhsin-01001101
 
-* This Project LICENSED to https://github.com/muhsin-01001101
+This command used Ubuntu Terminal
 
-* NOTE: This Project used Ubuntu Terminal
-
-* This Project contain "Symfony Demo Application + Docker-compose + yarn + makefile + Mysql + etc..".
+The "Symfony Demo Application + Docker-compose".
 
 Requirements
 ------------
 
-* PHP 7.3 or higher;
-* PDO-SQLite PHP extension enabled;
-* Mysql
-* Docker
+  * PHP 7.3 or higher;
+  * PDO-SQLite PHP extension enabled;
+  * and the [usual Symfony application requirements][2].
 
 Installation
 ------------
-1. Install composer:
-
+1. Install composer
 ```bash
-$ cd docker-compose-makefile-symfony-Demo-Mysql/
-
 $ make composer-install
 OR
 $ make composer-update
 ```
 
-2. Install all docker-compose images:
+2. Run this command:
 
 ```bash
-$ make
-OR
+$ cd docker-compose-makefile-symfony-Demo-Mysql/
 $ make up
 ```
 
@@ -43,8 +37,8 @@ $ make up
 $ sudo chmod -R 777 var/
 ```
 
-5. Then access the application in your browser at the given
-   URL (<https://localhost:8000> by default).
+5. Then access the application in your browser at the given 
+URL (<https://localhost:8000> by default).
 - phpmyadmin : <https://localhost:8080>). username & pass: symfony-demo
 
 MAKEFILE
