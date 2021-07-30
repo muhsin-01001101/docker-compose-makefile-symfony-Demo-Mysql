@@ -5,6 +5,7 @@ SYMFONY = bin/console
 DOCKER = docker
 YARN = yarn
 RM = docker container rm $$(docker ps -aq) -f
+COMPOSER = composer
 
 .PHONY: up
 up: ## Run all docker-compose images
@@ -21,6 +22,11 @@ ps: ## select all Docker container
 .PHONY: remove_all_containers
 remove_all_containers: ## Remove all containers command
 	$(RM)
+
+## --- Composer ---
+.PHONY: composer-install
+composer-update: ## install composer
+	composer install
 
 .PHONY: composer-update
 composer-update: ## Update composer

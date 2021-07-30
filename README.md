@@ -2,6 +2,8 @@ Symfony Demo Application
 ========================
 This Project LICENSED to https://github.com/muhsin-01001101
 
+This command used Ubuntu Terminal
+
 The "Symfony Demo Application + Docker-compose".
 
 Requirements
@@ -13,29 +15,29 @@ Requirements
 
 Installation
 ------------
-
+1. Install composer
 ```bash
-$ composer install 
+$ make composer-install
 OR
-$ composer update
+$ make composer-update
 ```
 
-Run this command:
+2. Run this command:
 
 ```bash
 $ cd docker-compose-makefile-symfony-Demo-Mysql/
 $ make up
 ```
 
-Go to Phpmyadmin :
+3. Go to phpmyadmin : <https://localhost:8080> :
 - import -> Browse your computer: (Choose File) -> data/dump-mysql.sql
 
-If you face any access permission issues:
+4. If you face any access permission issues in <https://localhost:8000>:
 ```bash
 $ sudo chmod -R 777 var/
 ```
 
-Then access the application in your browser at the given 
+5. Then access the application in your browser at the given 
 URL (<https://localhost:8000> by default).
 - phpmyadmin : <https://localhost:8080>). username & pass: symfony-demo
 
