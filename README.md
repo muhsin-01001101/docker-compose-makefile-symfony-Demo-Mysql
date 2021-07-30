@@ -36,10 +36,7 @@ run this command:
 
 ```bash
 $ cd docker-compose-makefile-symfony-Demo-Mysql/
-$ docker-compose up -d
-OR
-$ docker-compose down
-$ docker-compose ps
+$ make up
 ```
 
 Then access the application in your browser at the given 
