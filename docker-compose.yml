@@ -1,0 +1,77 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    command: ["--default-authentication-plugin=mysql_native_password"]
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password0
+      MYSQL_DATABASE: symfony-demo
+      MYSQL_USER: symfony-demo
+      MYSQL_PASSWORD: symfony-demo
+    networks:
+      - mysql
+
+  php-fpm:
+    container_name: php-fpm
+    build: ./docker/php-fpm
+#      args:
+#        PHP_XDEBUG_MODE: ${PHP_XDEBUG_MODE}
+#        PHP_XDEBUG_CLIENT_PORT: ${PHP_XDEBUG_CLIENT_PORT}
+#        PHP_XDEBUG_CLIENT_HOST: ${PHP_XDEBUG_CLIENT_HOST}
+#        SYMFONY_CLI_VERSION: 4.23.2
+    ports:
+      - 9000:9001
+    volumes:
+      - .:/app/:cached
+    networks:
+      - site
+      - mysql
+
+  nginx:
+    container_name: nginx
+    build: ./docker/nginx
+#      args:
+#        NGINX_SYMFONY_SERVER_NAME: ${NGINX_SYMFONY_SERVER_NAME}
+#        KIBANA_PORT: ${KIBANA_PORT}
+    ports:
+      - "8000:80"
+    depends_on:
+      - php-fpm
+    networks:
+      - site
+    volumes:
+      - .:/app/:cached
+
+  phpmyadmin:
+    depends_on:
+      - mysql
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - mysql
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: password0
+    networks:
+      - site
+      - mysql
+
+networks:
+  site:
+  mysql:
+volumes:
+  db_data:
+
+
+# sudo kill `sudo lsof -t -i:3306`
+# docker rm $(docker ps -a -q)
+# DATABASE_URL=mysql://symfony:symfony@db:3306/symfony?serverVersion=8.0
+# sudo chmod -R 777 var/
+# composer require symfony/runtime

@@ -1,0 +1,24 @@
+<?php //App%255CEntity%255CComment%2523isLegitComment
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Validator\\Constraints\\IsTrue'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\IsTrue')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'message' => [
+                'comment.is_spam',
+            ],
+            'groups' => [
+                [
+                    'Default',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+    ],
+    []
+); }];

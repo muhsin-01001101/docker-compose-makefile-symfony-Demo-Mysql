@@ -1,0 +1,49 @@
+<?php //App%255CEntity%255CPost%2524tags
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ManyToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToMany')),
+        clone ($p['Doctrine\\ORM\\Mapping\\JoinTable'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\JoinTable')),
+        clone ($p['Doctrine\\ORM\\Mapping\\OrderBy'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OrderBy')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Count'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Count')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'targetEntity' => [
+                'App\\Entity\\Tag',
+            ],
+            'cascade' => [
+                [
+                    'persist',
+                ],
+            ],
+            'name' => [
+                1 => 'symfony_demo_post_tag',
+            ],
+            'value' => [
+                2 => [
+                    'name' => 'ASC',
+                ],
+            ],
+            'maxMessage' => [
+                3 => 'post.too_many_tags',
+            ],
+            'max' => [
+                3 => '4',
+            ],
+            'groups' => [
+                3 => [
+                    'Default',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+); }];
