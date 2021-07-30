@@ -20,30 +20,26 @@ OR
 $ composer update
 ```
 
-Go to Phpmyadmin :
-- import -> Browse your computer: (Choose File) -> data/dump-mysql.sql
-
-If you face any access permission issues:
-```bash
-$ sudo chmod -R 777 var/
-OR
-$ sudo chmod -R 777 FolderName/
-```
-Usage
------
-
-run this command:
+Run this command:
 
 ```bash
 $ cd docker-compose-makefile-symfony-Demo-Mysql/
 $ make up
 ```
 
+Go to Phpmyadmin :
+- import -> Browse your computer: (Choose File) -> data/dump-mysql.sql
+
+If you face any access permission issues:
+```bash
+$ sudo chmod -R 777 var/
+```
+
 Then access the application in your browser at the given 
 URL (<https://localhost:8000> by default).
 - phpmyadmin : <https://localhost:8080>). username & pass: symfony-demo
 
-RUN THE PROJECT
+MAKEFILE
 -----
 Just go to makefile or execute:
 ```bash
